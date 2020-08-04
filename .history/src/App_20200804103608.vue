@@ -1,7 +1,7 @@
 <!--
  * @Author: Tmier
  * @Date: 2020-08-04 09:57:16
- * @LastEditTime: 2020-08-04 10:39:02
+ * @LastEditTime: 2020-08-04 10:36:08
  * @Description: 
 -->
 <template>
@@ -28,7 +28,7 @@ export default {
   methods: {
     getUserInfo() {
       //请求'/user/userinfo'接口
-      this.$axios.get("/user/myinfo").then(({ data }) => {
+      this.$axios.get("/user/userinfo").then(({ data }) => {
         console.log(data);
         if (data.error === 0) {
           this.userInfo = data.data;

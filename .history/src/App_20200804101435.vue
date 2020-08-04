@@ -1,7 +1,7 @@
 <!--
  * @Author: Tmier
  * @Date: 2020-08-04 09:57:16
- * @LastEditTime: 2020-08-04 10:39:02
+ * @LastEditTime: 2020-08-04 10:14:35
  * @Description: 
 -->
 <template>
@@ -11,7 +11,6 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
-    <img :src="userInfo.avatar" alt="">
   </div>
 </template>
 <script>
@@ -21,26 +20,11 @@ export default {
   components: {},
   data() {
     return {
-      userInfo: {},
+      userInfo:{}
     };
   },
   computed: {},
-  methods: {
-    getUserInfo() {
-      //请求'/user/userinfo'接口
-      this.$axios.get("/user/myinfo").then(({ data }) => {
-        console.log(data);
-        if (data.error === 0) {
-          this.userInfo = data.data;
-        } else {
-          this.userInfo = {};
-        }
-      });
-    },
-  },
-  created() {
-    this.getUserInfo();
-  },
+  methods: {},
 };
 </script>
 <style lang="less">
@@ -63,10 +47,6 @@ export default {
       color: #42b983;
     }
   }
-}
-img {
-  width:90px;
-  height:90px;
 }
 </style>
 
